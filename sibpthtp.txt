@@ -1,0 +1,11 @@
+Kurikulum Fullstack Developer Web
+- Softskill
+- Desain Web
+- GitHub
+- Desain UI/UX
+- Pemrograman JavaScript
+- Database MySQL/MariaDB
+- Pemrograman PHP & OOP
+- Framework Laravel
+- Rest API
+- Proyek Akhir
