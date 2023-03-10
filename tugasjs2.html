@@ -1,0 +1,32 @@
+<script>
+    let pegawai = "Herlinda Elvinta";
+    let jabatan = 'Staff';
+    let status = "Sudah Menikah";
+    let gajipokok = 0;
+
+    if(jabatan == 'Manager') gajipokok = 10000000;
+    else if(jabatan == 'Asisten Manager') gajipokok = 8000000;
+    else gajipokok = 5000000;
+
+    let tunjanganjb = 0.10 * gajipokok;
+    let bpjs = 0.10 * gajipokok;
+    let tunjangankb = 0;
+
+    if(status == "Sudah Menikah") tunjangankb = 0.10 * gajipokok;
+    else tunjangankb = 0;
+
+    let total = gajipokok + tunjanganjb + bpjs + tunjangankb;
+
+    document.write(
+        "DATA RINCIAN GAJI PEGAWAI<br>" +
+        "<br> Nama Pegawai : " + pegawai +
+        "<br> Jabatan : " + jabatan +
+        "<br> Status : " + status +
+        "<br> Gaji Pokok : Rp " + gajipokok +
+        "<br> Tunjangan Jabatan : Rp " + tunjanganjb +
+        "<br> BPJS : Rp " + bpjs +
+        "<br> Tunjangan Keluarga Bahagia : Rp " + tunjangankb +
+        "<hr />" +
+        "<br> <b>Total Pendapatan : Rp <b>" + total
+    );
+</script>
