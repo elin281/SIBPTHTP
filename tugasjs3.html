@@ -1,0 +1,68 @@
+<script>
+    let p1 = {nama:"Azkara", nilai:75};
+    let p2 = {nama:"Beatrix", nilai:80};
+    let p3 = {nama:"Christian", nilai:60};
+    let p4 = {nama:"Daniar", nilai:89};
+    let p5 = {nama:"Ervandi", nilai:90};
+    let p6 = {nama:"Fatricia", nilai:55};
+    let p7 = {nama:"Giorgino", nilai:75};
+    let p8 = {nama:"Herlinda", nilai:95};
+    let p9 = {nama:"Iwardani", nilai:62};
+    let p10 = {nama:"Juliana", nilai:84};
+
+    let person = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
+</script>
+<h3>
+    <table border="0" cellpadding="5" style="padding: 10; text-align: center; width: 100%;">
+        <thead>
+            <tr>
+                <th colspan="6"><h3>DATA NILAI MAHASISWA/I UNIVERSITAS SWAG</h3></th>
+            </tr>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nilai</th>
+                <th>Grade</th>
+                <th>Predikat</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                var no = 1;
+                for (p of person){
+                    let ket = (p.nilai >= 60)? "Lulus" : "Gagal";
+
+                    let grade = "";
+
+                    if(p.nilai > 89 && p.nilai <= 100) grade = "A";
+                    else if(p.nilai > 79 && p.nilai <= 89) grade = "B";
+                    else if(p.nilai > 69 && p.nilai <= 79) grade = "C";
+                    else if(p.nilai > 59 && p.nilai <= 69) grade = "D";
+                    else if(p.nilai >= 0 && p.nilai <= 59) grade = "E";
+                    else grade = "";
+
+                    switch(grade){
+                        case "A": predikat = "Sangat Baik"; break;
+                        case "B": predikat = "Baik"; break;
+                        case "C": predikat = "Cukup"; break;
+                        case "D": predikat = "Kurang"; break;
+                        case "E": predikat = "Sangat Kurang"; break;
+                        default: predikat = "";
+                    }
+                   
+                    var no, warna;
+                    warna = (no % 2 == 0 )? '#ccdbeb' : '#99a3ad';
+                    document.write(`<tr bgcolor="${warna}">
+                        <td>${no++}</td>
+                        <td>${p.nama}</td>
+                        <td>${p.nilai}</td>
+                        <td>${grade}</td>
+                        <td>${predikat}</td>
+                        <td>${ket}</td>
+                    </tr>`);
+                }
+            </script>
+        </tbody>
+    </table>
+</h3>
