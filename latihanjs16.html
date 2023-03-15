@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Javascript Eksternal</title>
+</head>
+<body>
+    <h3>Operasi Aritmatika JS</h3>
+    <form id="calculator">
+        <table>
+            <tr>
+                <th>Number 1</th>
+                <td><input type="number" name="number1" placeholder="Input first number"></td>
+            </tr>
+            <tr>
+                <th>Number 2</th>
+                <td><input type="number" name="number2" placeholder="Input second number"></td>
+            </tr>
+            <tr>
+                <th>Result</th>
+                <td><input type="number" name="result" disabled></td>
+            </tr>
+        </table>
+        <br>
+        <button type="button" name="btn_add" onclick="addition()">+</button>
+        <button type="button" name="btn_sub" onclick="subtraction()">-</button>
+    </form>
+
+    <script src="js/calculator.js"></script>
+</body>
+</html>

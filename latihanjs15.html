@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Javascript Eksternal</title>
+</head>
+<style>
+    table{
+        width: 50%;
+        background-color: cadetblue;
+        border: 1px solid black;
+        text-align: center;
+    }
+    input{
+        width: 90%;
+    }
+</style>
+<body>
+    <form id="frm">
+        <table border="1" align="center">
+            <tr>
+                <th colspan="2"><h3>Form Input JavaScript</h3></th>
+            </tr>
+            <tr>
+                <th><label>Nama</label></th>
+                <td><input type="text" name="nama" placeholder="Input nama anda"></td>
+            </tr>
+            <tr>
+                <th><label>Pekerjaan</label></th>
+                <td><input type="text" name="pekerjaan" placeholder="Input pekerjaan anda"></td>
+            </tr>
+            <tr>
+                <th><label>Hobi</label></th>
+                <td><input type="text" name="hobi" placeholder="Input hobi anda"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="button" onclick="dataPerson()">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <p id="hasil"></p>
+    <script src="js/script.js"></script>
+</body>
+</html>
