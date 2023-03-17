@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Pemanggilan JQuery</title>
+    <script src="js/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <script>
+        $( document ).ready(function() {
+            //Pembuatan jquery dengan pemanggilan selector tag
+            $("input").click(function(){
+                alert("Selamat Belajar JQuery!");
+            });
+            //Pembuatan jquery dengan pemanggilan id
+            $("#panggil_id").css("color", "red");
+            //Pembuatan jquery dengan pemanggilan clas
+            $(".panggil_clas").css("color", "blue");
+            //Pembuatan effect
+            $("p").hide("900");
+            $("p").slideDown("800");
+        });
+    </script>
+
+    <h3 id="panggil_id">Hello, guys!</h3>
+    <h4 class="panggil_clas">Welcome to my personal website</h4>
+    <p>Hidden Text in Here</p>
+    <input type="submit" value="Salam">
+</body>
+</html>
