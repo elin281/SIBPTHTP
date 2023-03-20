@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 5</title>
+</head>
+<body>
+    <form action="">
+        <table border="1" align="center" cellpadding="10" cellspacing="0" width="50%">
+            <thead>
+                <tr bgcolor="#e0dddc">
+                    <th colspan="2"><h3>Latihan Membuat Form</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor="fucia">
+                    <td width="30%"><label for="nama">Nama</label></td>
+                    <td width="80%"><input type="text" name="nama" placeholder="Silahkan input nama" size="30"></td>
+                </tr>
+                <tr bgcolor="#bfdbf2">
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" name="emai" placeholder="Silahkan input email" size="30"></td>
+                </tr>
+                <tr bgcolor="#f2bfe9">
+                    <td><label for="jk">Jenis Kelamin</label></td>
+                    <td>
+                        <input type="radio" name="jk" value="P" checked>Pria &nbsp;
+                        <input type="radio" name="jk" value="W">Wanita &nbsp;
+                        <input type="radio" name="jk" value="O">Lainnya
+                    </td>
+                </tr>
+                <tr bgcolor="#c9f2bf">
+                    <td><label for="hobi"></label></td>
+                    <td>
+                        <input type="checkbox" name="hobi" value="Menulis">Menulis <br>
+                        <input type="checkbox" name="hobi" value="Membaca">Membaca <br>
+                        <input type="checkbox" name="hobi" value="Menyanyi">Menyanyi <br>
+                        <input type="checkbox" name="hobi" value="Membaca">Mengdrakor <br>
+                        <input type="checkbox" name="hobi" value="Menyanyi">Memasak
+                    </td>
+                </tr>
+                <tr bgcolor="#f1f2bf">
+                    <td><label for="pendidikan">Pendidikan</label></td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">-----Pilih Pendidikan-----</option>
+                            <option value="SMA">SMA</option>
+                            <option value="D1">D1</option>
+                            <option value="D2">D2</option>
+                            <option value="D3">D3</option>
+                            <option value="D4">D4</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr bgcolor="#f2c8bf">
+                    <td><label for="alamat">Alamat</label></td>
+                    <td><textarea name="alamat" id="" cols="30" rows="10" placeholder="Silahkan input alamat"></textarea></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr bgcolor="#e0dddc">
+                    <th colspan="2">
+                        <input type="submit"> &nbsp;
+                        <input type="reset">
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+</html>

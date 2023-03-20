@@ -1,0 +1,49 @@
+/* Universal CSS */
+*{box-sizing: border-box;}
+body{margin: 0;}
+.header{
+    background-color: aquamarine;
+    padding: 20px;
+    text-align: center;
+}
+.topnav{
+    background-color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+}
+    .topnav a{
+        color: black;
+        text-decoration: none;
+        padding: 15px;
+        font-weight: bold;
+    }
+    .topnav a:hover{
+        color: white;
+        background-color: black;
+        letter-spacing: 1px;
+    }
+
+.side{
+    float: left;
+    padding: 10px;
+}
+.side.left,.side.right{
+    background-color: lightsteelblue;
+    width: 25%;
+}
+.side.middle{
+    background-color: lightsalmon;
+    width: 50%;
+}
+.side.right{
+    background-color: lightpink;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both; /* Membersihkan float left sebelumnya */
+}
+.footer{
+    background-color: cadetblue;
+    text-align: center;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2</title>
+</head>
+<body bgcolor="black">
+    <br>
+    <form>
+        <table border="0" align="center" cellpadding="10" cellspacing="0" width="25%">
+            <thead>
+                <tr bgcolor="#e0dddc">
+                    <th colspan="2"><h2>Form Register Produk</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor="fucia">
+                    <td><label for="nama">Nama Produk</label></td>
+                    <td><input type="text" name="nama"></td>
+                </tr>
+                <tr bgcolor="#f1f2bf">
+                    <td><label for="jenis">Jenis Produk</label></td>
+                    <td>
+                        <select name="jenis" id="jenis">
+                            <option value="">--Kategori Produk--</option>
+                            <option value="makanan">Makanan</option>
+                            <option value="minuman">Minuman</option>
+                            <option value="elektronik">Elektronik</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr bgcolor="fucia">
+                    <td><label for="harga">Harga</label></td>
+                    <td><input type="number" name="harga"></td>
+                </tr>
+                <tr bgcolor="#f1f2bf">
+                    <td><label for="stok">Stok</label></td>
+                    <td><input type="number" name="stok"></td>
+                </tr>
+                <tr bgcolor="fucia">
+                    <td><label for="photo">Photo</label></td>
+                    <td><input type="file" name="photo"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr bgcolor="#e0dddc">
+                    <th colspan="2">
+                        <input type="button" name="kirim" value="Kirim">
+                        <input type="reset" name="batal" value="Batal">
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    <br>
+    <form>
+        <table border="0" align="center" cellpadding="10" cellspacing="0" width="30%">
+            <thead>
+                <tr bgcolor="#e0dddc">
+                    <th colspan="2"><h2>Form Register Member</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor="fucia">
+                    <td><label for="username">Username</label></td>
+                    <td><input type="text" name="username" size="35"></td>
+                </tr>
+                <tr bgcolor="#f1f2bf">
+                    <td><label for="password">Password</label></td>
+                    <td><input type="password" name="password" size="35"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr bgcolor="#e0dddc">
+                    <th colspan="2">
+                        <input type="button" name="masuk" value="Masuk">
+                        <input type="reset" name="batal" value="Batal">
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+</html>
