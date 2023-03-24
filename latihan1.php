@@ -1,6 +1,9 @@
 <?php
+    echo 'Dokumen PHP saya ada di '.$_SERVER['DOCUMENT_ROOT'];
+    echo '<br>Nama File'.$_SERVER['SCRIPT_FILENAME'];
     //Ini adalah pemanggilan di php
-    echo "Hello world! I want introduce myself.";
+    echo "<hr>Hello world! I want introduce myself.";
+
     //Variabel pada php
     //Penulisan didalam tag php
     $nama = "Elin";
