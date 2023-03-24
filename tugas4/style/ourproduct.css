@@ -1,0 +1,16 @@
+.img_op{
+    width: 80%;
+    height: 80%;
+}
+h1, h3, p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h3, p{
+    text-align: center;
+}
+h3{
+    color: #807d77;
+}
+p{
+    font-size: 17px;
+}

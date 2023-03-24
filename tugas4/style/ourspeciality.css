@@ -1,0 +1,11 @@
+.img_os{
+    width: 100%;
+    height: 100%;
+}
+h1, h3, p{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+    font-size: 15px;
+}

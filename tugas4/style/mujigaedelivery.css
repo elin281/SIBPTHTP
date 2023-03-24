@@ -1,0 +1,11 @@
+p, h1, h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2, p{
+    margin-left: 5%;
+}
+p{
+    text-align: justify;
+    font-size: 17px;
+    margin-right: 5%;
+}
