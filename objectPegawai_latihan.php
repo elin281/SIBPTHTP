@@ -1,4 +1,5 @@
 <?php
+    //Ini adalah file latihan objectPegawai
     require('Pegawai.php');
 
     $pegawai1 = new Pegawai('2777','Elin','Staff','Islam','Belum Menikah');

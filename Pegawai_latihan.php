@@ -1,4 +1,5 @@
 <?php
+    //Ini adalah file latihan Pegawai
     class Pegawai_latihan{
         protected $nip;
         public $nama;
