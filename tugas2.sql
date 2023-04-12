@@ -31,17 +31,18 @@ select * from pelanggan where nama_pelanggan like '_A%';
     --Cara 2
     select * from produk where stok = (select max(stok) from produk);
 --Menampilkan dua produk yang stoknya paling sedikit
-    --Cara 1
-    select min(stok) as stok_paling_sedikit from produk limit 2;
-    --Cara 2
-    select * from produk where stok = (select min(stok) from produk limit 2);
+select * from produk order by stok asc limit 2;
 --Menampilkan pelanggan yang paling muda
     --Cara 1
     select * from pelanggan order by tgl_lahir desc limit 1;
     --Cara 2 (jika mengetahui jumlah baris datanya)
     select * from pelanggan order by tgl_lahir asc limit 1 offset 5;
+    --Cara 3
+    select * from pelanggan where tgl_lahir = (select max(tgl_lahir) from pelanggan);
 --Menampilkan pelanggan yang paling tua
     --Cara 1
     select * from pelanggan order by tgl_lahir asc limit 1;
     --Cara 2 (jika mengetahui jumlah baris datanya)
     select * from pelanggan order by tgl_lahir desc limit 1 offset 5;
+    --Cara 3
+    select * from pelanggan where tgl_lahir = (select min(tgl_lahir) from pelanggan);
