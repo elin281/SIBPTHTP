@@ -85,3 +85,50 @@ MariaDB [dbtoko]> select * from produk where stok = (select max(stok) from produ
 |  6 | TV02 | TV 21 inch |    3000000 |    3500000 |   10 |        3 |               1 |
 +----+------+------------+------------+------------+------+----------+-----------------+
 1 row in set (0.167 sec)
+
+MariaDB [dbtoko]> select nama,harga_beli,stok,
+    -> case
+    -> when stok >= 5 then 'Cukup'
+    -> else 'Kurang'
+    -> end as keterangan
+    -> from produk;
++--------------+------------+------+------------+
+| nama         | harga_beli | stok | keterangan |
++--------------+------------+------+------------+
+| TV 42 inch   |    5000000 |    2 | Kurang     |
+| TV 21 inch   |    3000000 |   10 | Cukup      |
+| Kulkas       |    9500000 |    5 | Cukup      |
+| Meja Makan   |    1500000 |    4 | Kurang     |
+| Taro Pop Ice |       8500 |    3 | Kurang     |
+| Teh Kotak    |       3000 |    5 | Cukup      |
++--------------+------------+------+------------+
+6 rows in set (0.002 sec)
+
+MariaDB [dbtoko]> select
+    -> case
+    -> when jenis_produk_id = 1 then 'Elektronik'
+    -> when jenis_produk_id = 2 then 'Makanan'
+    -> when jenis_produk_id = 3 then 'Minuman'
+    -> else 'Furniture'
+    -> end as kategori, sum(stok) as jml from produk group by id;
++------------+------+
+| kategori   | jml  |
++------------+------+
+| Elektronik |    2 |
+| Elektronik |   10 |
+| Elektronik |    5 |
+| Furniture  |    4 |
+| Makanan    |    3 |
+| Minuman    |    5 |
++------------+------+
+6 rows in set (0.001 sec)
+
+MariaDB [dbtoko]> select jk, count(jk) as jml_jk from pelanggan
+    -> group by jk having count(jk) > 1;
++----+--------+
+| jk | jml_jk |
++----+--------+
+| L  |      3 |
+| P  |      3 |
++----+--------+
+2 rows in set (0.012 sec)
