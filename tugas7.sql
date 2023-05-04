@@ -140,3 +140,21 @@ Query OK, 0 rows affected (0.022 sec)
 
 /* buatkan query panjang di atas menjadi sebuah view baru: pesanan_produk_vw
 (menggunakan join dari table pesanan,pelanggan dan produk) */
+MariaDB [dbtoko]> create view pesanan_produk_vw as
+    -> select pesanan.id as pesanan_id, pesanan.tanggal, pelanggan.nama_pelanggan, produk.nama, pesanan.total from pesanan
+    -> inner join pelanggan on pesanan.pelanggan_id = pelanggan.id
+    -> inner join produk on pesanan.pelanggan_id = produk.jenis_produk_id;
+Query OK, 0 rows affected (0.014 sec)
+MariaDB [dbtoko]> select * from pesanan_produk_vw;
++------------+------------+----------------+--------------------+--------+
+| pesanan_id | tanggal    | nama_pelanggan | nama               | total  |
++------------+------------+----------------+--------------------+--------+
+|          1 | 2023-03-04 | Agung          | TV 42 inch         | 200000 |
+|          1 | 2023-03-04 | Agung          | TV 21 inch         | 200000 |
+|          1 | 2023-03-04 | Agung          | Kulkas             | 200000 |
+|          4 | 2022-04-04 | Suandi         | Meja Makan         |  50000 |
+|          3 | 2022-05-05 | Puspita        | Taro Pop Ice       | 105000 |
+|          2 | 2023-04-03 | Sekar          | Teh Kotak          |  30000 |
+|          1 | 2023-03-04 | Agung          | Kipas Angin Cosmos | 200000 |
++------------+------------+----------------+--------------------+--------+
+7 rows in set (0.012 sec)
