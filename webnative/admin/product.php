@@ -1,3 +1,12 @@
+<?php
+    include_once 'models/Produk.php';
+    $model = new Produk();
+    $data_produk = $model->dataProduk();
+
+    foreach($data_produk as $row){
+        print $row['kode'];
+    }
+ ?>
                     <h1 class="mt-4">Data Product</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
