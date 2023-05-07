@@ -6,7 +6,7 @@
     try{
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Koneksi sukses";
+        //echo "Koneksi sukses";
     }
     catch(PDOException $e){
         echo 'Database tidak terkoneksi'.$e->getMessage();

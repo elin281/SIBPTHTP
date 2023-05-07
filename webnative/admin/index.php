@@ -1,4 +1,10 @@
 <?php
+    include_once("koneksi.php");
+    include_once("models/Produk.php");
+    include_once("models/Jenis_Produk.php");
+    include_once("models/Pelanggan.php");
+    include_once("models/Pesanan.php");
+    include_once("models/Kartu.php");
     include_once("top.php");
     include_once("menu.php");
  ?>
