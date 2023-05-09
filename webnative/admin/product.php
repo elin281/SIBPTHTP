@@ -21,8 +21,8 @@
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                <!--<i class="fas fa-table me-1"></i>-->
+                                <a href="index.php?url=product_form" class="btn btn-primary btn-sm">Tambah</a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -36,6 +36,7 @@
                                             <th>Stok</th>
                                             <th>Minimal Stok</th>
                                             <th>Jenis Produk</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -48,6 +49,7 @@
                                             <th>Stok</th>
                                             <th>Minimal Stok</th>
                                             <th>Jenis Produk</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -64,6 +66,15 @@
                                             <td><?= $row['stok'] ?></td>
                                             <td><?= $row['min_stok'] ?></td>
                                             <td><?= $row['jenis_produk_id'] ?></td>
+                                            <td>
+                                                <form action="product_controller.php" method="post">
+                                                    <a class="btn btn-info btn-sm" href="index.php?url=product_detail&id=<?= $row ['id'] ?>">Detail</a>
+                                                    <a class="btn btn-warning btn-sm" href="">Ubah</a>
+                                                    <a class="btn btn-danger btn-sm" href="">Hapus</a>
+
+                                                    <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <?php $no++; } ?>
                                     </tbody>
