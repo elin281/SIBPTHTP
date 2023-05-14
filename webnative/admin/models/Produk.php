@@ -27,5 +27,16 @@
             $ps = $this->koneksi->prepare($sql);
             $ps->execute($data);
         }
+        public function ubah($data){
+            $sql = "UPDATE produk SET kode=?, nama=?, harga_jual=?, harga_beli=?, stok=?, min_stok=?, jenis_produk_id=?
+            WHERE id=?";
+            $ps = $this->koneksi->prepare($sql);
+            $ps->execute($data);
+        }
+        public function hapus($id){
+            $sql = "DELETE FROM produk WHERE id=?";
+            $ps = $this->koneksi->prepare($sql);
+            $ps->execute([$id]);
+        }
     }
  ?>

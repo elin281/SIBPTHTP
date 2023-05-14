@@ -5,6 +5,8 @@
     //foreach($data_produk as $row){
     //    print $row['kode'];
     //}
+    $sesi = $_SESSION['MEMBER'];
+    if(isset($sesi)){
  ?>
                     <h1 class="mt-4">Data Produk</h1>
                         <ol class="breadcrumb mb-4">
@@ -21,8 +23,12 @@
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
+                                <?php
+                                    if($sesi['role'] != 'staff'){
+                                 ?>
                                 <!--<i class="fas fa-table me-1"></i>-->
                                 <a href="index.php?url=product_form" class="btn btn-primary btn-sm">Tambah</a>
+                                <?php } ?>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -33,9 +39,6 @@
                                             <th>Nama</th>
                                             <th>Harga Beli</th>
                                             <th>Harga Jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis Produk</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -46,9 +49,6 @@
                                             <th>Nama</th>
                                             <th>Harga Beli</th>
                                             <th>Harga Jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis Produk</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -63,16 +63,18 @@
                                             <td><?= $row['nama'] ?></td>
                                             <td><?= $row['harga_beli'] ?></td>
                                             <td><?= $row['harga_jual'] ?></td>
-                                            <td><?= $row['stok'] ?></td>
-                                            <td><?= $row['min_stok'] ?></td>
-                                            <td><?= $row['jenis_produk_id'] ?></td>
                                             <td>
                                                 <form action="product_controller.php" method="post">
                                                     <a class="btn btn-info btn-sm" href="index.php?url=product_detail&id=<?= $row ['id'] ?>">Detail</a>
-                                                    <a class="btn btn-warning btn-sm" href="">Ubah</a>
-                                                    <a class="btn btn-danger btn-sm" href="">Hapus</a>
+                                                    <?php
+                                                        if($sesi['role'] == 'admin'){
+                                                     ?>
+                                                    <a class="btn btn-warning btn-sm" href="index.php?url=product_form&idedit=<?= $row ['id'] ?>">Ubah</a>
+                                                    <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
+                                                    onclick="return confirm('Anda yakin ingin menghapus?')">Hapus</button>
 
                                                     <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                    <?php } ?>
                                                 </form>
                                             </td>
                                         </tr>
@@ -83,3 +85,9 @@
                         </div>
                     </div>
                 </div>
+<?php
+    }
+    else {
+        echo '<script>alert("Anda tidak dapat masuk!");history.back();</script>';
+    }
+ ?>

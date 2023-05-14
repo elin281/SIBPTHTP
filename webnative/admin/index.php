@@ -1,10 +1,16 @@
 <?php
+    session_start();
     include_once("koneksi.php");
     include_once("models/Produk.php");
     include_once("models/Jenis_Produk.php");
     include_once("models/Pelanggan.php");
     include_once("models/Pesanan.php");
     include_once("models/Kartu.php");
+    include_once("models/Member.php");
+
+    $sesi = $_SESSION['MEMBER'];
+    if(isset($sesi)){
+
     include_once("top.php");
     include_once("menu.php");
  ?>
@@ -29,4 +35,9 @@
 </div>
 <?php
     include_once("bottom.php");
+    }
+    else{
+        echo '<script>alert("Anda tidak boleh masuk!");history.back();</script>';
+    }
+
  ?>

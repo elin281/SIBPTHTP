@@ -5,6 +5,8 @@
     //foreach($data_pelanggan as $row){
     //    print $row['kode'];
     //}
+    $sesi = $_SESSION['MEMBER'];
+    if(isset($sesi)){
  ?>
                     <h1 class="mt-4">Data Pelanggan</h1>
                         <ol class="breadcrumb mb-4">
@@ -21,8 +23,8 @@
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                <!--<i class="fas fa-table me-1"></i>-->
+                                <a href="index.php?url=pelanggan_form" class="btn btn-primary btn-sm">Tambah</a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -32,11 +34,7 @@
                                             <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Email</th>
-                                            <th>Alamat</th>
-                                            <th>Kartu</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -45,11 +43,7 @@
                                             <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Email</th>
-                                            <th>Alamat</th>
-                                            <th>Kartu</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -62,11 +56,20 @@
                                             <td><?= $row['kode'] ?></td>
                                             <td><?= $row['nama_pelanggan'] ?></td>
                                             <td><?= $row['jk'] ?></td>
-                                            <td><?= $row['tmp_lahir'] ?></td>
-                                            <td><?= $row['tgl_lahir'] ?></td>
-                                            <td><?= $row['email'] ?></td>
-                                            <td><?= $row['alamat'] ?></td>
-                                            <td><?= $row['kartu_id'] ?></td>
+                                            <td>
+                                                <form action="pelanggan_controller.php" method="post">
+                                                    <?php
+                                                        if($sesi['role'] != 'staff'){
+                                                     ?>
+                                                    <a class="btn btn-info btn-sm" href="index.php?url=pelanggan_detail&id=<?= $row ['id'] ?>">Detail</a>
+                                                    <a class="btn btn-warning btn-sm" href="index.php?url=pelanggan_form&idedit=<?= $row ['id'] ?>">Ubah</a>
+                                                    <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
+                                                    onclick="return confirm('Anda yakin ingin menghapus?')">Hapus</button>
+
+                                                    <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                    <?php } ?>
+                                                </form>
+                                            </td>
                                         </tr>
                                         <?php $no++; } ?>
                                     </tbody>
@@ -75,3 +78,9 @@
                         </div>
                     </div>
                 </div>
+<?php
+    }
+    else {
+        echo '<script>alert("Anda tidak dapat masuk!");history.back();</script>';
+    }
+ ?>
